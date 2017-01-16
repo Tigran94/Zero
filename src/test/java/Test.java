@@ -43,6 +43,7 @@ public class Test {
             String[] cmd = {"C:\\WINDOWS\\system32\\cmd.exe","/c","start","c:\\Users\\HP\\Desktop\\Zero.bat"};
             Runtime runtime = Runtime.getRuntime();
             p = runtime.exec(cmd);
+            Thread.sleep(80000);
         }
     }
 
@@ -59,7 +60,7 @@ public class Test {
     @After
     public void after(){
         p1.destroy();
-       // driver.quit();
+        driver.quit();
     }
 
 }
