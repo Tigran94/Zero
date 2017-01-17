@@ -9,15 +9,13 @@ import org.openqa.selenium.support.FindBy;
 public class AccountDetails {
 
     @FindBy(id = "mail.zero.com.zeromail:id/account_details_name_edit_text")
-    private WebElement Name;
+    private WebElement name;
 
     @FindBy(id = "mail.zero.com.zeromail:id/account_details_description_edit_text")
-    private WebElement Description;
+    private WebElement description;
 
     @FindBy(id = "mail.zero.com.zeromail:id/add_descriptions_done_btn")
-    private WebElement DoneButton;
-
-
+    private WebElement doneButton;
 
 
 }

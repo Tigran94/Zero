@@ -9,19 +9,19 @@ import org.openqa.selenium.support.FindBy;
 public class LogIn {
 
     @FindBy(xpath ="//android.widget.ImageButton[@content-desc='Navigate up']")
-    private WebElement BackButton;
+    private WebElement backButton;
 
     @FindBy(id = "mail.zero.com.zeromail:id/user_email_wrapper")
-    private WebElement Email;
+    private WebElement email;
 
     @FindBy(id = "mail.zero.com.zeromail:id/user_password_wrapper")
-    private WebElement Password;
+    private WebElement password;
 
     @FindBy(id = "mail.zero.com.zeromail:id/text_input_password_toggle")
-    private WebElement EyeButton;
+    private WebElement eyeButton;
 
     @FindBy(id = "mail.zero.com.zeromail:id/sign_in_btn")
-    private WebElement LogInButton;
+    private WebElement logInButton;
 
 
 }

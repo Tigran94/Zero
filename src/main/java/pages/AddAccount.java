@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 public class AddAccount {
 
     @FindBy(xpath ="//android.widget.ImageButton[@content-desc='Navigate up']")
-    private WebElement BackButton;
+    private WebElement backButton;
 
     @FindBy(xpath = "//android.widget.FrameLayout[@index='0']")
     private WebElement google;
