@@ -17,5 +17,7 @@ public class AccountDetails {
     @FindBy(id = "mail.zero.com.zeromail:id/add_descriptions_done_btn")
     private WebElement doneButton;
 
+    public void pressOnDoneButton(){doneButton.click();}
+
 
 }

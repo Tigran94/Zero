@@ -4,6 +4,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 /**
  * Created by HP on 1/16/2017.
  */
@@ -12,26 +14,16 @@ public class AddAccount {
     @FindBy(xpath ="//android.widget.ImageButton[@content-desc='Navigate up']")
     private WebElement backButton;
 
-    @FindBy(xpath = "//android.widget.FrameLayout[@index='0']")
-    private WebElement google;
+   @FindBy(id = "mail.zero.com.zeromail:id/add_account_logo")
+   private List<WebElement> mail;
 
-    @FindBy(xpath = "//android.widget.FrameLayout[@index='1']")
-    private WebElement iCloud;
 
-    @FindBy(xpath = "//android.widget.FrameLayout[@index='2']")
-    private WebElement outlook;
 
-    @FindBy(xpath = "//android.widget.FrameLayout[@index='3']")
-    private WebElement hotmail;
 
-    @FindBy(xpath = "//android.widget.FrameLayout[@index='4']")
-    private WebElement yahoo;
+    public void clickOnYahoo(){
+        mail.get(4).click();
+    }
 
-    @FindBy(xpath = "//android.widget.FrameLayout[@index='5']")
-    private WebElement office365;
-
-    @FindBy(xpath = "//android.widget.FrameLayout[@index='6']")
-    private WebElement exchange;
 
 
 }
