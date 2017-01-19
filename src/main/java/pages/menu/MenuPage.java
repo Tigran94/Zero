@@ -7,10 +7,13 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by HP on 1/17/2017.
  */
-public class Menu {
+public class MenuPage {
 
     @FindBy(xpath = "//android.widget.ImageButton[@content-desc='Open navigation drawer']")
     private WebElement menuButton;
+
+    @FindBy(xpath = "//mail.zero.com.zeromail:id/current_user_email[@text='test.test599@yahoo.com']")
+    private WebElement user;
 
     @FindBy(id = "mail.zero.com.zeromail:id/current_email_switcher")
     private WebElement currentEmailSwitcher;
@@ -44,7 +47,7 @@ public class Menu {
     @FindBy(xpath = "//android.widget.CheckedTextView[@text='Add account']")
     private WebElement addAccount;
 
-    @FindBy(xpath = "//android.widget.CheckedTextView[@text='Settings']")
+    @FindBy(xpath = "//android.widget.CheckedTextView[@text='SettingsPage']")
     private WebElement settings;
 
     @FindBy(xpath = "//android.widget.TextView[@text='Feedback']")
@@ -59,6 +62,7 @@ public class Menu {
     public void pressOnMenuButton(){menuButton.click();}
     public void pressOnAddAccount(){addAccount.click();}
     public void pressOnSettingsAccount(){settings.click();}
+    public String getUser(){return user.getText();}
 
 
 }

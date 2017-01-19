@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by HP on 1/18/2017.
  */
-public class SendMessage {
+public class SendMessagePage {
 
     @FindBy(id = "mail.zero.com.zeromail:id/new_email_message")
     private WebElement messageField;

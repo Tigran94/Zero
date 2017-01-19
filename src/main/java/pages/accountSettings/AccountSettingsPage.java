@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by HP on 1/18/2017.
  */
-public class AccountSettings {
+public class AccountSettingsPage {
 
     @FindBy(xpath ="//android.widget.ImageButton[@content-desc='Navigate up']")
     private WebElement backButton;

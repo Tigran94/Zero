@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by HP on 1/18/2017.
  */
-public class Fab {
+public class FabPage {
 
     @FindBy(className = "android.widget.ImageButton")
     private WebElement fabButton;
