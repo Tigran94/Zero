@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import steps.login.YahooSteps;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -15,6 +16,8 @@ import java.net.URL;
 public class Test {
     Process p,p1;
     WebDriver driver;
+    YahooSteps login;
+
     @Before
     public void before() throws IOException, InterruptedException {
         String userDir = System.getProperties().get("user.dir").toString();
@@ -52,11 +55,16 @@ public class Test {
         p1=Runtime.getRuntime().exec(command1);
     }
     @org.junit.Test
-    public void setUp() throws IOException, InterruptedException {
+    public void yahooLogIn() throws IOException, InterruptedException {
 
-        driver.findElements(By.id("mail.zero.com.zeromail:id/add_account_logo")).get(0).click();
+        Thread.sleep(3000);
+        login.loginYahoo("test.test599@yahoo.com","fatestyahoo100");
 
     }
+
+
+
+
     @After
     public void after(){
         p1.destroy();

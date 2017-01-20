@@ -9,9 +9,13 @@ import org.openqa.selenium.support.FindBy;
 public class InboxPage {
 
     @FindBy(xpath = "//mail.zero.com.zeromail:id/mail_author[@text='test.test599@yahoo.com']")
-    private WebElement inbox;
+    private WebElement chooseInboxMessage;
 
-    public void pressOnInbox(){inbox.click();}
+    @FindBy(xpath = "//mail.zero.com.zeromail:id/threadEmailTitle[@text='test.test599@yahoo.com']")
+    private WebElement message;
+
+    public void pressOnInbox(){chooseInboxMessage.click();}
+    public String getMessageSenderName(){return message.getText();}
 
 
 }
