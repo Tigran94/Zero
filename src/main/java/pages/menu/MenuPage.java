@@ -1,5 +1,6 @@
 package pages.menu;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,8 +14,8 @@ public class MenuPage {
     @FindBy(xpath = "//android.widget.ImageButton[@content-desc='Open navigation drawer']")
     private WebElement menuButton;
 
-    @FindBy(xpath = "//mail.zero.com.zeromail:id/current_user_email[@text='test.test599@yahoo.com']")
-    private WebElement user;
+//    @FindBy(xpath = "//mail.zero.com.zeromail:id/current_user_email[@text='test.test599@yahoo.com']")
+//    private WebElement user;
 
     @FindBy(id = "mail.zero.com.zeromail:id/current_email_switcher")
     private WebElement currentEmailSwitcher;
@@ -70,8 +71,8 @@ public class MenuPage {
     public void pressOnMenuButton(){menuButton.click();}
     public void pressOnAddAccount(){addAccount.click();}
     public void pressOnSettingsAccount(){settings.click();}
-    public String getUser(){return user.getText();}
-
-
+    public String getUser(){
+        return  driver.findElement(By.id("mail.zero.com.zeromail:id/current_user_email")).getAttribute("text");
+        }
 }
 

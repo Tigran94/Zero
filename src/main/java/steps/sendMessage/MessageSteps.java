@@ -5,6 +5,7 @@ import pages.fab.FabPage;
 import pages.menu.MenuPage;
 import pages.message.SendMessagePage;
 import pages.sections.InboxPage;
+import steps.assertions.MessageAssert;
 import steps.login.YahooSteps;
 
 /**
@@ -17,6 +18,7 @@ public class MessageSteps {
     SendMessagePage message;
     MenuPage addAccount;
     InboxPage inbox;
+    MessageAssert messageAssert;
     WebDriver driver;
 
     public MessageSteps(WebDriver driver)
@@ -24,13 +26,14 @@ public class MessageSteps {
         this.driver=driver;
     }
 
-    public void sendMessage(){
+    public void sendMessage() throws InterruptedException {
 
         yahoo=new YahooSteps(driver);
         fab=new FabPage(driver);
         message=new SendMessagePage(driver);
         addAccount=new MenuPage(driver);
         inbox=new InboxPage(driver);
+        messageAssert=new MessageAssert(driver);
 
         yahoo.loginYahoo("test.test599@yahoo.com","fatestyahoo100");
         fab.pressOnFabButton();
@@ -43,6 +46,8 @@ public class MessageSteps {
         addAccount.pressOnAddAccount();
         yahoo.loginYahoo("levMik94@yahoo.com","Makardak123");
         inbox.pressOnInbox();
+        messageAssert.assertMessage();
+
 
 
 
