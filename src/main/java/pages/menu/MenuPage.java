@@ -3,12 +3,13 @@ package pages.menu;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by HP on 1/17/2017.
  */
 public class MenuPage {
-
+    WebDriver driver;
     @FindBy(xpath = "//android.widget.ImageButton[@content-desc='Open navigation drawer']")
     private WebElement menuButton;
 
@@ -58,6 +59,13 @@ public class MenuPage {
 
     @FindBy(xpath = "//android.widget.TextView[@text='Rate The App']")
     private WebElement rateTheApp;
+
+    public MenuPage(WebDriver driver)
+    {
+        this.driver=driver;
+        PageFactory.initElements(driver,this);
+    }
+
 
     public void pressOnMenuButton(){menuButton.click();}
     public void pressOnAddAccount(){addAccount.click();}

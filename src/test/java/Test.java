@@ -16,7 +16,7 @@ import java.net.URL;
 public class Test {
     Process p,p1;
     WebDriver driver;
-    YahooSteps login;
+    YahooSteps login=new YahooSteps(driver);
 
     @Before
     public void before() throws IOException, InterruptedException {
@@ -56,10 +56,7 @@ public class Test {
     }
     @org.junit.Test
     public void yahooLogIn() throws IOException, InterruptedException {
-
-        Thread.sleep(3000);
         login.loginYahoo("test.test599@yahoo.com","fatestyahoo100");
-
     }
 
 

@@ -1,8 +1,10 @@
 package pages;
 
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
@@ -10,7 +12,7 @@ import java.util.List;
  * Created by HP on 1/16/2017.
  */
 public class AddAccountPage {
-
+    WebDriver driver;
     @FindBy(xpath ="//android.widget.ImageButton[@content-desc='Navigate up']")
     private WebElement backButton;
 
@@ -20,7 +22,11 @@ public class AddAccountPage {
    @FindBy(id = "mail.zero.com.zeromail:id/add_account_logo")
    private List<WebElement> mail;
 
-
+    public AddAccountPage(WebDriver driver)
+    {
+        this.driver=driver;
+        PageFactory.initElements(driver,this);
+    }
 
 
     public void clickOnYahoo(){
