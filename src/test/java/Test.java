@@ -16,8 +16,7 @@ import java.net.URL;
 public class Test {
     Process p,p1;
     WebDriver driver;
-    YahooSteps login=new YahooSteps(driver);
-
+    YahooSteps login;
     @Before
     public void before() throws IOException, InterruptedException {
         String userDir = System.getProperties().get("user.dir").toString();
@@ -32,6 +31,10 @@ public class Test {
         caps.setCapability("app",userDir+"/zero.apk");
 
         driver =new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),caps);
+
+        login=new YahooSteps(driver);
+        Thread.sleep(10000);
+
     }
 
     public void openTerminal() throws IOException, InterruptedException {
@@ -40,7 +43,7 @@ public class Test {
         if (osName.equals("Mac OS X")) {
             String command = "/usr/bin/open -a Terminal /Users/admin/Desktop/do.bash";
             p=Runtime.getRuntime().exec(command);
-            Thread.sleep(80000);
+            Thread.sleep(40000);
         }
         else if(osName.equals("Windows 7")){
             String[] cmd = {"C:\\WINDOWS\\system32\\cmd.exe","/c","start","c:\\Users\\HP\\Desktop\\Zero.bat"};
