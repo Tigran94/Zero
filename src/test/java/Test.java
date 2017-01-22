@@ -83,7 +83,7 @@ public class Test {
             Thread.sleep(10000);
         }
         else if(osName.equals("Windows 8.1")){
-            String[] cmd = {"C:\\WINDOWS\\system32\\cmd.exe","/c","start","c:\\Users\\HP\\Desktop\\Zero.bat"};
+            String[] cmd = {"C:\\WINDOWS\\system32\\cmd.exe","/c","start","C:\\Users\\Levon Mikaelyan\\Desktop\\Zero.bat"};
             Runtime runtime = Runtime.getRuntime();
             p = runtime.exec(cmd);
             Thread.sleep(10000);
