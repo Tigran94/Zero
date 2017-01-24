@@ -18,7 +18,6 @@ public class MessageSteps {
     SendMessagePage message;
     MenuPage addAccount;
     InboxPage inbox;
-    MessageAssert messageAssert;
     WebDriver driver;
 
     public MessageSteps(WebDriver driver)
@@ -33,20 +32,28 @@ public class MessageSteps {
         message=new SendMessagePage(driver);
         addAccount=new MenuPage(driver);
         inbox=new InboxPage(driver);
-        messageAssert=new MessageAssert(driver);
+
+
 
         yahoo.loginYahoo("test.test599@yahoo.com","fatestyahoo100");
         fab.pressOnFabButton();
         fab.pressOnComposeButton();
         message.writeMessage("barev axper");
-        message.writeTo("levMik94@yahoo.com");
+        Thread.sleep(3000);
         message.writeSubject("Barev");
+        Thread.sleep(3000);
+        message.writeTo("levMik94@yahoo.com");
+        Thread.sleep(3000);
         message.pressOnSendButton();
+        Thread.sleep(3000);
         addAccount.pressOnMenuButton();
+        Thread.sleep(3000);
         addAccount.pressOnAddAccount();
+        Thread.sleep(9000);
         yahoo.loginYahoo("levMik94@yahoo.com","Makardak123");
+        Thread.sleep(3000);
         inbox.pressOnInbox();
-        messageAssert.assertMessage();
+
 
 
 

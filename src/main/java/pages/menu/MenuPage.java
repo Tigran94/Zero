@@ -20,46 +20,13 @@ public class MenuPage {
     @FindBy(id = "mail.zero.com.zeromail:id/current_email_switcher")
     private WebElement currentEmailSwitcher;
 
-    @FindBy(xpath = "//android.widget.CheckedTextView[@text='INBOX']")
-    private WebElement inbox;
-
-
-    @FindBy(xpath = "//android.widget.CheckedTextView[@text='Sent']")
-    private WebElement sent ;
-
-
-    @FindBy(xpath = "//android.widget.CheckedTextView[@text='Archive']")
-    private WebElement archive;
-
-
-    @FindBy(xpath = "//android.widget.CheckedTextView[@text='Draft']")
-    private WebElement draft;
-
-
-    @FindBy(xpath = "//android.widget.CheckedTextView[@text='Bulk Mail']")
-    private WebElement bulkMail;
-
-
-    @FindBy(xpath = "//android.widget.CheckedTextView[@text='Snoozed']")
-    private WebElement snoozed;
-
-    @FindBy(xpath = "//android.widget.CheckedTextView[@text='Zero']")
-    private WebElement zero;
-
     @FindBy(xpath = "//android.widget.CheckedTextView[@text='Add account']")
     private WebElement addAccount;
 
-    @FindBy(xpath = "//android.widget.CheckedTextView[@text='SettingsPage']")
+    @FindBy(xpath = "//android.widget.CheckedTextView[@text='Settings']")
     private WebElement settings;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Feedback']")
-    private WebElement feedback;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Tutorial']")
-    private WebElement tutorial;
-
-    @FindBy(xpath = "//android.widget.TextView[@text='Rate The App']")
-    private WebElement rateTheApp;
 
     public MenuPage(WebDriver driver)
     {

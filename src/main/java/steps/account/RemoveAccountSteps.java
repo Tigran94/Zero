@@ -16,7 +16,6 @@ public class RemoveAccountSteps {
     MenuPage menu;
     SettingsPage account;
     AccountSettingsPage remove;
-    RemoveAssert removeAssert;
     WebDriver driver;
     public RemoveAccountSteps(WebDriver driver)
     {
@@ -27,20 +26,18 @@ public class RemoveAccountSteps {
         menu=new MenuPage(driver);
         account=new SettingsPage(driver);
         remove=new AccountSettingsPage(driver);
-        removeAssert=new RemoveAssert(driver);
 
         yahoo.loginYahoo("test.test599@yahoo.com","fatestyahoo100");
-        Thread.sleep(10000);
         menu.pressOnMenuButton();
         Thread.sleep(3000);
         menu.pressOnSettingsAccount();
-        Thread.sleep(2000);
+        Thread.sleep(10000);
         account.pressOnAccount();
-        Thread.sleep(2000);
+        Thread.sleep(18000);
         remove.pressOnRemoveAccountButton();
-        Thread.sleep(3000);
+        Thread.sleep(7000);
         remove.pressOnBackButton();
-        removeAssert.removeUser();
+
 
 
     }

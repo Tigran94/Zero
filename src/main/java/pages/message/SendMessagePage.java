@@ -27,8 +27,15 @@ public class SendMessagePage {
         PageFactory.initElements(driver,this);
     }
 
-    public void writeMessage(String message){messageField.sendKeys(message);}
-    public void writeTo(String to){messageField.sendKeys(to);}
-    public void writeSubject(String emailsubject){subjectField.sendKeys(emailsubject);}
+    public void writeMessage(String message){
+        //messageField.clear();
+        messageField.sendKeys(message);
+    }
+    public void writeTo(String to){
+        //toField.clear();
+        toField.sendKeys(to);}
+    public void writeSubject(String emailsubject){
+      //  subjectField.clear();
+        subjectField.sendKeys(emailsubject);}
     public void pressOnSendButton(){sendButton.click();}
 }

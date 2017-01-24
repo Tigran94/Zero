@@ -12,7 +12,7 @@ public class FabPage {
 
     WebDriver driver;
 
-    @FindBy(className = "android.widget.ImageButton")
+    @FindBy(xpath = "//android.widget.ImageButton[@NAF='true']")
     private WebElement fabButton;
 
     @FindBy(id = "mail.zero.com.zeromail:id/fab_item_compose")

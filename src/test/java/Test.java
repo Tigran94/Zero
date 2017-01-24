@@ -47,10 +47,13 @@ public class Test {
 
 
         DesiredCapabilities caps= new DesiredCapabilities();
-        caps.setCapability("deviceName","BH914FY50D");
+        caps.setCapability("deviceName","3004d4b147463100");
         caps.setCapability("platformName","Android");
-       // caps.setCapability("appActivity",".accounts.AddAccountActivity");
+        caps.setCapability("platformVersion","4.4.2");
+        //caps.setCapability("orientation","LANDSCAPE");
+        // caps.setCapability("appActivity",".accounts.AddAccountActivity");
         caps.setCapability("app",userDir+"/zero.apk");
+
 
         driver =new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),caps);
 
@@ -97,6 +100,7 @@ public class Test {
     @org.junit.Test
     public void yahooLogIn() throws IOException, InterruptedException {
         login.loginYahoo("test.test599@yahoo.com","fatestyahoo100");
+        menu.pressOnMenuButton();
         loginAssert.assertUser();
 
     }
@@ -120,9 +124,14 @@ public class Test {
         fab.pressOnFabButton();
         fab.pressOnComposeButton();
         sendMessage.writeMessage("Barev axper");
+        Thread.sleep(2000);
         sendMessage.writeTo("levMik94@yahoo.com");
+        Thread.sleep(2000);
         sendMessage.writeSubject("Barev");
         sendMessage.pressOnSendButton();
+        Thread.sleep(7000);
+        menu.pressOnMenuButton();
+        Thread.sleep(5000);
         menu.pressOnAddAccount();
         login.loginYahoo("levMik94@yahoo.com","Makardak123");
         inbox.pressOnInbox();
@@ -131,10 +140,10 @@ public class Test {
     }
 
 
-    @After
+  /*  @After
     public void after(){
         p1.destroy();
         driver.quit();
-    }
+    }*/
 
 }

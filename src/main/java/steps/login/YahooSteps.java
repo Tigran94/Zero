@@ -15,8 +15,6 @@ public class YahooSteps {
     AddAccountPage addAccount;
     LogInPage login;
     AccountDetailsPage accountDetais;
-    MenuPage menu;
-    LoginAssert loginAssert;
     WebDriver driver;
     public YahooSteps(WebDriver driver)
     {
@@ -27,19 +25,15 @@ public class YahooSteps {
         addAccount=new AddAccountPage(driver);
         login=new LogInPage(driver);
         accountDetais=new AccountDetailsPage(driver);
-        menu=new MenuPage(driver);
-        loginAssert=new LoginAssert(driver);
+
 
         addAccount.clickOnYahoo();
         login.writeEmail(user);
         login.writePassword(password);
         login.pressOnLogIn();
-        Thread.sleep(10000);
+        Thread.sleep(14000);
         accountDetais.pressOnDoneButton();
-        Thread.sleep(5000);
-        menu.pressOnMenuButton();
-        Thread.sleep(5000);
-        loginAssert.assertUser();
+        Thread.sleep(9000);
 
 
     }

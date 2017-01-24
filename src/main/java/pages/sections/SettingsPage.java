@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class SettingsPage {
     WebDriver driver;
-    @FindBy(xpath = "//mail.zero.com.zeromail:id/settings_account_email[@text='test.test599@yahoo.com']")
+    @FindBy(xpath = "//android.widget.LinearLayout[@index'0' and @clickable='true']")
     private WebElement account;
 
     public SettingsPage(WebDriver driver)

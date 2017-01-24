@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class InboxPage {
     WebDriver driver;
-    @FindBy(xpath = "//mail.zero.com.zeromail:id/mail_author[@text='test.test599@yahoo.com']")
+    @FindBy(xpath = "//android.widget.LinearLayout[@index='1']")
     private WebElement chooseInboxMessage;
 
     @FindBy(xpath = "//mail.zero.com.zeromail:id/threadEmailTitle[@text='test.test599@yahoo.com']")
