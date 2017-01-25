@@ -10,7 +10,11 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class SettingsPage {
     WebDriver driver;
-    @FindBy(xpath = "//android.widget.LinearLayout[@index'0' and @clickable='true']")
+
+    @FindBy(xpath = "//android.widget.ImageButton[@content-desc='Navigate up']")
+    private WebElement backButton;
+
+    @FindBy(id = "mail.zero.com.zeromail:id/settings_account_email")
     private WebElement account;
 
     public SettingsPage(WebDriver driver)
@@ -20,6 +24,7 @@ public class SettingsPage {
     }
 
     public void pressOnAccount(){account.click();}
+    public void pressOnBackButton(){backButton.click();}
 
 
 }

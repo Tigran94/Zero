@@ -14,6 +14,9 @@ public class MenuPage {
     @FindBy(xpath = "//android.widget.ImageButton[@content-desc='Open navigation drawer']")
     private WebElement menuButton;
 
+    @FindBy(id = "mail.zero.com.zeromail:id/current_email_switcher")
+    private WebElement emailSwitcher;
+
 //    @FindBy(xpath = "//mail.zero.com.zeromail:id/current_user_email[@text='test.test599@yahoo.com']")
 //    private WebElement user;
 
@@ -38,8 +41,13 @@ public class MenuPage {
     public void pressOnMenuButton(){menuButton.click();}
     public void pressOnAddAccount(){addAccount.click();}
     public void pressOnSettingsAccount(){settings.click();}
+    public void pressOnEmailSwitcher(){emailSwitcher.click();}
     public String getUser(){
         return  driver.findElement(By.id("mail.zero.com.zeromail:id/current_user_email")).getAttribute("text");
         }
+
+    public String getUserName(){
+        return  driver.findElement(By.id("mail.zero.com.zeromail:id/current_user_name")).getAttribute("text");
+    }
 }
 

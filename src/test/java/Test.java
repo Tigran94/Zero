@@ -6,13 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.accountSettings.AccountSettingsPage;
 import pages.fab.FabPage;
+import pages.menu.Emails.EmailsPage;
 import pages.menu.MenuPage;
 import pages.message.SendMessagePage;
 import pages.sections.InboxPage;
 import pages.sections.SettingsPage;
-import steps.assertions.LoginAssert;
-import steps.assertions.MessageAssert;
-import steps.assertions.RemoveAssert;
+import steps.assertions.*;
 import steps.login.YahooSteps;
 
 import java.io.IOException;
@@ -38,6 +37,11 @@ public class Test {
     SendMessagePage sendMessage;
     InboxPage inbox;
     MessageAssert messageAssert;
+
+    NameAssert nameAssert;
+
+    EmailsPage user;
+    ChangeEmailAssert userEmail;
 
     @Before
     public void before() throws IOException, InterruptedException {
@@ -67,6 +71,9 @@ public class Test {
         sendMessage=new SendMessagePage(driver);
         inbox=new InboxPage(driver);
         messageAssert=new MessageAssert(driver);
+        nameAssert=new NameAssert(driver);
+        user=new EmailsPage(driver);
+        userEmail=new ChangeEmailAssert(driver);
         Thread.sleep(10000);
 
     }
@@ -97,6 +104,10 @@ public class Test {
         String command1="emulator -avd Nexus_5X_API_19";
         p1=Runtime.getRuntime().exec(command1);
     }
+
+
+
+
     @org.junit.Test
     public void yahooLogIn() throws IOException, InterruptedException {
         login.loginYahoo("test.test599@yahoo.com","fatestyahoo100");
@@ -118,7 +129,7 @@ public class Test {
 
     }
 
-    @org.junit.Test
+   /* @org.junit.Test
     public void messageSend() throws IOException, InterruptedException{
         login.loginYahoo("test.test599@yahoo.com","fatestyahoo100");
         fab.pressOnFabButton();
@@ -137,7 +148,48 @@ public class Test {
         inbox.pressOnInbox();
         inbox.getMessageSenderName();
         messageAssert.assertMessage();
+    }*/
+
+
+    @org.junit.Test
+    public void addName() throws IOException, InterruptedException{
+        login.loginYahoo("test.test599@yahoo.com","fatestyahoo100");
+        menu.pressOnMenuButton();
+        menu.pressOnSettingsAccount();
+        settings.pressOnAccount();
+        account.addingName("Levon");
+        account.pressOnBackButton();
+        settings.pressOnBackButton();
+        menu.pressOnMenuButton();
+        nameAssert.assertUserName();
+
     }
+
+
+    @org.junit.Test
+    public void changeUser() throws IOException, InterruptedException{
+        login.loginYahoo("test.test599@yahoo.com","fatestyahoo100");
+        menu.pressOnMenuButton();
+        menu.pressOnAddAccount();
+        login.loginYahoo("levMik94@yahoo.com","Makardak123");
+        menu.pressOnMenuButton();
+        menu.pressOnEmailSwitcher();
+        user.chooseUser();
+        menu.pressOnMenuButton();
+        userEmail.userChangingAssert();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
   /*  @After

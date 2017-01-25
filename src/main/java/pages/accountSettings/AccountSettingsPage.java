@@ -18,6 +18,9 @@ public class AccountSettingsPage {
     @FindBy(id = "mail.zero.com.zeromail:id/account_settings_remove_account")
     private WebElement removeAccount;
 
+    @FindBy(id = "mail.zero.com.zeromail:id/account_details_name_edit_text")
+    private WebElement nameField;
+
     public AccountSettingsPage(WebDriver driver)
     {
         this.driver=driver;
@@ -26,6 +29,7 @@ public class AccountSettingsPage {
 
     public void pressOnRemoveAccountButton(){removeAccount.click();}
     public void pressOnBackButton(){backButton.click();}
+    public void addingName(String name){nameField.sendKeys(name);}
 
 
 }
