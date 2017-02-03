@@ -1,14 +1,9 @@
 package steps.changeEmail;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import pages.AddAccountPage;
-import pages.login.AccountDetailsPage;
-import pages.login.LogInPage;
-import pages.menu.Emails.EmailsPage;
+import pages.menu.emails.EmailsPage;
 import pages.menu.MenuPage;
 import steps.login.YahooSteps;
-import sun.awt.windows.ThemeReader;
 
 /**
  * Created by HP on 1/24/2017.

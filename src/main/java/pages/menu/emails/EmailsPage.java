@@ -1,4 +1,4 @@
-package pages.menu.Emails;
+package pages.menu.emails;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

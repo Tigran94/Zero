@@ -1,21 +1,19 @@
 import io.appium.java_client.android.AndroidDriver;
-import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.accountSettings.AccountSettingsPage;
 import pages.fab.FabPage;
-import pages.menu.Emails.EmailsPage;
+import pages.menu.emails.EmailsPage;
 import pages.menu.MenuPage;
 import pages.message.SendMessagePage;
+import pages.message.attached.AttachedPage;
 import pages.sections.InboxPage;
 import pages.sections.SettingsPage;
 import steps.assertions.*;
 import steps.login.YahooSteps;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -42,6 +40,10 @@ public class Test {
 
     EmailsPage user;
     ChangeEmailAssert userEmail;
+
+    AttachedPage file;
+    AttachmentFileAssert assertFile;
+
 
     @Before
     public void before() throws IOException, InterruptedException {
@@ -74,6 +76,8 @@ public class Test {
         nameAssert=new NameAssert(driver);
         user=new EmailsPage(driver);
         userEmail=new ChangeEmailAssert(driver);
+        file=new AttachedPage(driver);
+        assertFile=new AttachmentFileAssert(driver);
         Thread.sleep(10000);
 
     }
@@ -181,8 +185,18 @@ public class Test {
     }
 
 
+    @org.junit.Test
+    public void attachedFile() throws IOException, InterruptedException {
+
+        login.loginYahoo("test.test599@yahoo.com", "fatestyahoo100");
+        fab.pressOnFabButton();
+        fab.pressOnComposeButton();
+        sendMessage.pressOnAttachedButton();
+        file.chooseFile();
+        assertFile.assertAttachedFile();
 
 
+    }
 
 
 
